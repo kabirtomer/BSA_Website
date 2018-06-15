@@ -26,7 +26,7 @@ class People(models.Model):
     image_link = models.CharField(blank=False, max_length=500)
 
 
-class Events(models.Model):
+class Event(models.Model):
     name = models.CharField(blank=False, max_length=50)
     date = models.DateField(blank=False)
     time = models.TimeField(blank=True)
@@ -36,7 +36,12 @@ class Events(models.Model):
     image_link = models.CharField(blank=True, max_length=500)
 
 
-class Announcements(models.Model):
+class Gallery(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    path_to_images = models.CharField(blank=False, max_length=500)
+
+
+class Announcement(models.Model):
     desc = models.CharField(blank=False, max_length=300)
     link = models.CharField(blank=True, max_length=500)
 
@@ -44,6 +49,9 @@ class Announcements(models.Model):
 class LiveMatch(models.Model):
     score = models.CharField(blank=False, max_length=100)
     start_time = models.DateTimeField('time started')
+    duration = models.TimeField
+    header = models.CharField(blank=False, max_length=500)
+    end_text = models.CharField(blank=True, max_length=500)
 
 
 class Comment(models.Model):

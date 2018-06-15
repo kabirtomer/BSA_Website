@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import People, Events, Announcements, LiveMatch, Comment
+from .models import People, Event, Announcement, LiveMatch, Comment
 
 # Register your models here.
 
 admin.site.register(People)
-admin.site.register(Events)
-admin.site.register(Announcements)
+admin.site.register(Event)
+admin.site.register(Announcement)
 admin.site.register(LiveMatch)
 admin.site.register(Comment)

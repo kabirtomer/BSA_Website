@@ -32,12 +32,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">Home</a>
+                <a href="{% url 'mainsite:index' %} class="navbar-brand">Home</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                      <li>
-                        <a href="{% url 'mainsite:index' %}">My Notes</a>
+                        <a href="{% url 'mainsite:people' %}">People</a>
+                     </li>
+                    <li>
+                        <a href="{% url 'mainsite:events' %}">Events</a>
+                     </li>
+                    <li>
+                        <a href="{% url 'mainsite:gallery' %}">Gallery</a>
+                     </li>
+                    <li>
+                        <a href="{% url 'mainsite:live' %}">LIVE</a>
                      </li>
                 </ul>
             </div>
