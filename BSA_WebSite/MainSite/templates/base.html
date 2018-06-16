@@ -7,19 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>{% block title %}NotesKeep - The Best NoteKeeping Site{% endblock title %}</title>
-    {% block stylesheets %}
-    <link rel="stylesheet" href="{% static 'AppSite/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'AppSite/bootstrap-theme.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'AppSite/theme.css' %}" />
+    <title>{% block title %}Board for Sports Activities - IIT Delhi{% endblock title %}</title>
 
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'MainSite/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/bootstrap-theme.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/theme.css' %}" />
+
+        {% block privatestyles %}
+        {% endblock privatestyles %}
     {% endblock stylesheets %}
+
 </head>
 
 {% block scriptload %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="{% static 'AppSite/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'AppSite/js/docs.min.js' %}"></script>
+<script src="{% static 'MainSite/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'MainSite/js/docs.min.js' %}"></script>
 {% endblock scriptload %}
 
 <body role="document">
@@ -32,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="{% url 'mainsite:index' %} class="navbar-brand">Home</a>
+                <a href="{% url 'mainsite:index' %}" class="navbar-brand">Home</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -66,7 +70,7 @@
 </div>
 {% endif %}
 
-<div class="container theme-showcase" role="main">
+<div class="container theme-showcase" role="main" style="margin-top: 5%">
     {% block body %}
     {% endblock body %}
 </div>
