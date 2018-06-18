@@ -2,12 +2,99 @@
 {% load static %}
 {% block privatestyles %}
     <link rel="stylesheet" href="{% static 'MainSite/scroll.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700&subset=latin-ext,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'MainSite/slider.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/parallax.css' %}" />
 {% endblock privatestyles %}
+{% block privatejs %}
+    <script src="{% static "MainSite/js/jssor.slider-27.1.0.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "MainSite/js/slider.js" %}" type="text/javascript"></script>
+    <script src="{% static "MainSite/js/parallax.min.js" %}" type="text/javascript"></script>
+{% endblock privatejs %}
 {% block body %}
 
-<div class = relative_parent style="margin-top: 5%;">
+
+<div id="jssor_1" style="position:relative;margin-left: 3%;margin-top: 7%; width:980px;height:380px;overflow:hidden;visibility:hidden; z-index: 1">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/001.jpg' %}" />
+                <div data-u="caption" data-t="0" style="position:absolute;top:320px;left:30px;width:500px;height:40px;background-color:rgba(255,188,5,0.8);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">Mobile ready, touch swipe</div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/002.jpg' %}" />
+                <div data-u="caption" data-t="1" style="position:absolute;top:-50px;left:125px;width:500px;height:40px;background-color:rgba(255,188,5,0.8);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">Time lined layer animation</div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/003.jpg' %}" />
+                <div data-u="caption" data-t="2" style="position:absolute;top:30px;left:-505px;width:500px;height:40px;background-color:rgba(255,188,5,0.8);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">Finger catchable right to left</div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/004.jpg' %}" />
+                <div data-u="caption" data-t="3" style="position:absolute;top:30px;left:30px;width:500px;height:40px;background-color:rgba(255,188,5,0.8);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">responsive, scale smoothly</div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/005.jpg' %}" />
+                <div data-u="caption" data-t="4" style="position:absolute;top:30px;left:30px;width:500px;height:40px;background-color:rgba(255,188,5,0.8);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">image, text, and custom layers</div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/006.jpg' %}" />
+                <div data-u="caption" data-t="5" style="position:absolute;top:30px;left:600px;width:500px;height:40px;background-color:rgba(255,188,5,0.8);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">tons of transition type</div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/007.jpg' %}" />
+                <div data-u="caption" data-t="6" style="position:absolute;top:30px;left:30px;width:500px;height:40px;background-color:rgba(255,188,5,0.8);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">visual slider maker</div>
+            </div>
+            <div data-b="0" data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/008.jpg' %}" />
+                <div data-u="caption" data-t="7" style="position:absolute;top:-50px;left:30px;width:500px;height:40px;background-color:rgba(255,188,5,0.8);font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;">play in and play out</div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/009.jpg' %}" />
+                <div data-u="caption" data-t="8" style="position:absolute;top:25px;left:150px;width:250px;height:250px;background-color:rgba(40,177,255,0.6);overflow:hidden;">
+                    <div data-u="caption" data-t="9" style="position:absolute;top:100px;left:25px;width:200px;height:50px;font-family:Oswald,sans-serif;font-size:24px;font-weight:200;line-height:2.08;">A Child Layer</div>
+                </div>
+            </div>
+            <div data-p="170.00">
+                <img data-u="image" src="{% static 'MainSite/img_slideshow/010.jpg' %}" />
+                <div data-u="caption" data-t="10" style="position:absolute;top:25px;left:100px;width:300px;height:260px;background-color:rgba(40,177,255,0.6);font-family:Oswald,sans-serif;font-size:24px;font-weight:200;line-height:1.25;padding:15px 15px 15px 15px;box-sizing:border-box;">This is full customized content layer.<br />​<br />
+
+                    Everything is allowed.<br />​<br />You can insert
+
+                    <a href="http://www.jssor.com">
+                        a link
+                    </a> or an image
+
+                    <img src="{% static 'MainSite/img_slideshow/icon_chrome.png' %}" /> here.
+                </div>
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb052" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora053" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora053" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+</div>
+
 <div class="microsoft scrollcustom">
-<p class="marquee" style="margin-top: 30%">
+<p class="marquee" style="margin-top: 1%">
     <ul class="marquee">
         {% for announcement in announcements %}
             <li class="marquee"> {{ announcement.desc }}</li>
@@ -15,6 +102,53 @@
     </ul>
 </p>
 </div>
+
+    <section>
+      <div class="container">
+        <div id="ios-notice" class="alert alert-info hidden"><p><strong>Notice:</strong> Hello mobile user. Unfortunately, this parallax effect is not reliably achieved on mobile devices, so all you will see on this demo page are static backgrounds.  Please visit this page on a desktop browser to see its full effect.</p></div>
+      </div>
+    </section>
+
+<div style="position: relative; padding: 3%">
+Hello World
 </div>
 
+<div class="parallax-container" data-parallax="scroll" data-position="top" data-image-src="{% static 'MainSite/img_parallax/stellar-spire-eagle-nebula-1400x900.jpg' %}" data-natural-width="1400" data-natural-height="900"></div>
+
+    <div class="container">
+        <p> SOME STATIC INFO WITH SCROLL EFFECTS</p>
+    </div>
+
+<div class="parallax-container" data-parallax="scroll"data-speed="0.2" data-image-src="{% static 'MainSite/img_parallax/helix-nebula-1400x1400.jpg' %}" data-natural-width="1400" data-natural-height="1400"></div>
+
+    <div class="container">
+        <p> SOME STATIC INFO WITH SCROLL EFFECTS</p>
+    </div>
+
+<div class="parallax-container" data-parallax="scroll" data-image-src="{% static 'MainSite/img_parallax/spiral-galaxy-1400x900.jpg' %}" data-natural-height="900"></div>
+
+    <div class="container">
+        <p> SOME STATIC INFO WITH SCROLL EFFECTS</p>
+    </div>
+
+<div class="parallax-container" data-parallax="scroll" data-image-src="{% static 'MainSite/img_parallax/reflection-nebula-750x763.jpg' %}" data-natural-width="750" data-natural-height="763"></div>
+
+    <div class="container">
+        <p> AND ON AND ON</p>
+    </div>
+
+    <script type="text/javascript">jssor_1_slider_init();</script>
+    <script type="text/javascript">
+    $(function(){
+        if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+          $('#ios-notice').removeClass('hidden');
+          $('.parallax-container').height( $(window).height() * 0.5 | 0 );
+        } else {
+          $(window).resize(function(){
+            var parallaxHeight = Math.max($(window).height() * 0.7, 200) | 0;
+            $('.parallax-container').height(parallaxHeight);
+          }).trigger('resize');
+        }
+      });
+    </script>
 {% endblock body %}

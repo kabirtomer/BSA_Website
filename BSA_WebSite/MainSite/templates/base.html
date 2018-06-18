@@ -19,11 +19,12 @@
     {% endblock stylesheets %}
 
 </head>
-
 {% block scriptload %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="{% static 'MainSite/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'MainSite/js/docs.min.js' %}"></script>
+        {% block privatejs %}
+        {% endblock privatejs %}
+
 {% endblock scriptload %}
 
 <body role="document">
@@ -70,10 +71,10 @@
 </div>
 {% endif %}
 
-<div class="container theme-showcase" role="main" style="margin-top: 5%">
+
     {% block body %}
     {% endblock body %}
-</div>
+
 
 <hr>
 {% block footer %}
