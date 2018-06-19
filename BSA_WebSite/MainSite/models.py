@@ -2,6 +2,29 @@ from django.db import models
 
 # Create your models here.
 
+TEAMS = (
+    ('', 'None'),
+    ('Athletics (Men)', 'Athletics (Men)'),
+    ('Athletics (Women)', 'Athletics (Women)'),
+    ('Aquatics (Men)', 'Aquatics (Men)'),
+    ('Aquatics (Women)', 'Aquatics (Women)'),
+    ('Badminton (Men)', 'Badminton (Men)'),
+    ('Badminton (Women)', 'Badminton (Women)'),
+    ('Basketball (Men)', 'Basketball (Men)'),
+    ('Basketball (Women)', 'Basketball (Women)'),
+    ('Cricket', 'Cricket'),
+    ('Football', 'Football'),
+    ('Hockey', 'Hockey'),
+    ('Lawn Tennis (Men)', 'Lawn Tennis (Men)'),
+    ('Lawn Tennis (Women)', 'Lawn Tennis (Women)'),
+    ('Squash', 'Squash'),
+    ('Table Tennis (Men)', 'Table Tennis (Men)'),
+    ('Table Tennis (Women)', 'Table Tennis (Women)'),
+    ('Volleyball (Men)', 'Volleyball (Men)'),
+    ('Volleyball (Women)', 'Volleyball (Women)'),
+    ('Weight-lifting', 'Weight-lifting')
+)
+
 
 class People(models.Model):
     Secretary = 'secy'
@@ -17,6 +40,7 @@ class People(models.Model):
         (ViceCaptain, 'Vice-Captain')
     )
     type = models.CharField(blank=False, max_length=8, choices=people_types, default=Secretary)
+    team = models.CharField(blank=True, max_length=20, choices=TEAMS, default='', help_text="Leave blank if not capn or vice-capn")
     name = models.CharField(blank=False, max_length=30, help_text="Full Name")
     entryno = models.CharField(blank=True, max_length=15, help_text="Leave Blank if faculty")
     mobileno = models.CharField(blank=True, max_length=15, help_text="Mobile Number")

@@ -30,9 +30,11 @@ def index(request):
 
 def people(request):
     faculty_list = People.objects.filter(type=Faculty)
-    board_members = People.objects.filter(type=Secretary or Executive)
-    team_members = People.objects.filter(type=Captain or ViceCaptain)
-    context = {'faculty_list': faculty_list, 'board_members': board_members, 'team_members':team_members}
+    secretaries = People.objects.filter(type=Secretary)
+    executives = People.objects.filter(type=Executive)
+    team_members = People.objects.filter(type=Captain or ViceCaptain).order_by('team')
+    context = {'faculty_list': faculty_list, 'secretaries': secretaries, 'executives': executives,
+               'team_members': team_members}
     return render(request, 'MainSite/people.html', context)
 
 

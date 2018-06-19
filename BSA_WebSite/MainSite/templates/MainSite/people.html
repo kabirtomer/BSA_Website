@@ -1,8 +1,44 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{%  block privatejs %}
+    <script src="{% static "MainSite/js/jquery.tabslet.min.js" %}" type="text/javascript"></script>
+{%  endblock privatejs %}
+
 {% block body %}
 
-
+<div class='tabs' data-toggle="tabslet" style="margin-top: 5%">
+	<ul class="container">
+		<li style="display: inline; background: #adadad; margin: 2px; padding: 5px"><a href="#tab-1">Associated Faculty</a></li>
+		<li style="display: inline; background: #adadad; margin: 2px; padding: 5px"><a href="#tab-2">Sports Secys</a></li>
+		<li style="display: inline; background: #adadad; margin: 2px; padding: 5px"><a href="#tab-3">BSA Exes</a></li>
+        <li style="display: inline; background: #adadad; margin: 2px; padding: 5px"><a href="#tab-4">Caps and Vice Caps</a></li>
+	</ul>
+	<div id='tab-1' class="container" style="min-height: 400px; background: #e7e7e7">
+        <h3> Faculty Members </h3>
+        {% for person in faculty_list %}
+            <p> {{ person.name }}</p>
+        {% endfor %}
+    </div>
+	<div id='tab-2' class="container" style="min-height: 400px; background: #e7e7e7">
+        <h3> Sport Secretaries </h3>
+        {% for person in secretaries %}
+            <p> {{ person.name }}</p>
+        {% endfor %}
+    </div>
+	<div id='tab-3' class="container" style="min-height: 400px; background: #e7e7e7">
+        <h3> BSA Executives </h3>
+        {% for person in executives %}
+            <p> {{ person.name }}</p>
+        {% endfor %}
+    </div>
+    <div id='tab-4' class="container" style="min-height: 400px; background: #e7e7e7">
+        <h3> Captains and Vice Captains </h3>
+        {% for person in team_members %}
+            <p> {{ person.name }}</p>
+        {% endfor %}
+    </div>
+</div>
 
 
 
