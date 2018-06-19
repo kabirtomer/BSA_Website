@@ -1,18 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block privatestyles %}
-    <link rel="stylesheet" href="{% static 'MainSite/scroll.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700&subset=latin-ext,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'MainSite/scroll.css' %}" />
     <link rel="stylesheet" href="{% static 'MainSite/slider.css' %}" />
     <link rel="stylesheet" href="{% static 'MainSite/parallax.css' %}" />
+    <link rel="stylesheet" href="{% static 'MainSite/animate.css' %}" />
 {% endblock privatestyles %}
 {% block privatejs %}
     <script src="{% static "MainSite/js/jssor.slider-27.1.0.min.js" %}" type="text/javascript"></script>
     <script src="{% static "MainSite/js/slider.js" %}" type="text/javascript"></script>
     <script src="{% static "MainSite/js/parallax.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "MainSite/js/wow.min.js" %}" type="text/javascript"></script>
 {% endblock privatejs %}
 {% block body %}
 
+    <script>
+    new WOW().init();
+    </script>
 
 <div id="jssor_1" style="position:relative;margin-left: 3%;margin-top: 7%; width:980px;height:380px;overflow:hidden;visibility:hidden; z-index: 1">
         <!-- Loading Screen -->
@@ -115,27 +120,29 @@ Hello World
 
 <div class="parallax-container" data-parallax="scroll" data-position="top" data-image-src="{% static 'MainSite/img_parallax/stellar-spire-eagle-nebula-1400x900.jpg' %}" data-natural-width="1400" data-natural-height="900"></div>
 
-    <div class="container">
-        <p> SOME STATIC INFO WITH SCROLL EFFECTS</p>
+    <div class="container wow fadeInLeft animated" style="min-height: 400px">
+        <p style="font-size: x-large"> SOME STATIC INFO WITH SCROLL EFFECTS</p>
     </div>
 
 <div class="parallax-container" data-parallax="scroll"data-speed="0.2" data-image-src="{% static 'MainSite/img_parallax/helix-nebula-1400x1400.jpg' %}" data-natural-width="1400" data-natural-height="1400"></div>
 
-    <div class="container">
-        <p> SOME STATIC INFO WITH SCROLL EFFECTS</p>
+    <div class="container wow fadeInLeft animated" style="min-height: 400px">
+        <p style="font-size: x-large"> SOME STATIC INFO WITH SCROLL EFFECTS</p>
     </div>
 
 <div class="parallax-container" data-parallax="scroll" data-image-src="{% static 'MainSite/img_parallax/spiral-galaxy-1400x900.jpg' %}" data-natural-height="900"></div>
 
-    <div class="container">
-        <p> SOME STATIC INFO WITH SCROLL EFFECTS</p>
+    <div class="container wow fadeInLeft animated" style="min-height: 400px">
+        <p style="font-size: x-large"> SOME STATIC INFO WITH SCROLL EFFECTS</p>
     </div>
 
 <div class="parallax-container" data-parallax="scroll" data-image-src="{% static 'MainSite/img_parallax/reflection-nebula-750x763.jpg' %}" data-natural-width="750" data-natural-height="763"></div>
 
-    <div class="container">
-        <p> AND ON AND ON</p>
+    <div class="container wow fadeInLeft animated" style="min-height: 400px">
+        <p style="font-size: x-large"> AND ON AND ON</p>
     </div>
+
+<div class="parallax-container" data-parallax="scroll" data-position="top" data-image-src="{% static 'MainSite/img_parallax/stellar-spire-eagle-nebula-1400x900.jpg' %}" data-natural-width="1400" data-natural-height="900"></div>
 
     <script type="text/javascript">jssor_1_slider_init();</script>
     <script type="text/javascript">
