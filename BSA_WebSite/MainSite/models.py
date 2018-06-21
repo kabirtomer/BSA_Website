@@ -55,7 +55,7 @@ class Event(models.Model):
     date = models.DateField(blank=False)
     time = models.TimeField(blank=True)
     short_des = models.CharField(blank=True, max_length=300)
-    long_des = models.TextField
+    long_des = models.CharField(blank=True, max_length=2000)
     logo_link = models.CharField(blank=True, max_length=500)
     image_link = models.CharField(blank=True, max_length=500)
 

@@ -44,8 +44,8 @@ def people(request):
 def events(request):
     date = datetime.today()
     day_events = Event.objects.filter(date=date)
-    past_events = Event.objects.filter(date__lt=date)
-    upcoming_events = Event.objects.filter(date__gt=date)
+    past_events = Event.objects.filter(date__lt=date).order_by("-date")
+    upcoming_events = Event.objects.filter(date__gt=date).order_by("date")
     context = {'day_events': day_events, 'past_events': past_events, 'upcoming_events': upcoming_events}
     return render(request, 'MainSite/events.htmL', context)
 
