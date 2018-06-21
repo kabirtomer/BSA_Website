@@ -1,9 +1,74 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block privatestyles %}
+<link  href="https://unpkg.com/nanogallery2@2.2.0/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+{% endblock privatestyles %}
+{% block privatejs %}
+<script  type="text/javascript" src="https://unpkg.com/nanogallery2@2.2.0/dist/jquery.nanogallery2.min.js"></script>
+{% endblock privatejs %}
 {% block body %}
 
+<div class="sidenav" style="margin-top: 5%;">
+    <button class="btn btn-default tablink" onclick="expandEvent(event,'showcase')"> ShowCase</button>
+    <br/>
+    {% for event in all_event_images %}
+    <button class="btn btn-default tablink" onclick="expandEvent(event,'{{ event.event_name }}')">{{ event.event_name }}</button>
+    <br/>
+    {% endfor %}
+</div>
 
+<div class="main">
+    <div id="showcase" class="container event" style="min-height: 400px; background: #e7e7e7; margin-top: 2%">
+        <h3> SHOWCASE </h3>
+        <div id="nanogallery2" data-nanogallery2 = '{
+                        "thumbnailHeight":  150,
+                        "thumbnailWidth":   "auto",
+						"thumbnailDisplayTransition": "slideLeft",
+                        "itemsBaseURL":     "{% static showcase.base_dir %}/"
+                      }' >
 
+                  <!-- gallery content -->
+                  {% for name in showcase.images %}
+                  <a href = "{{ name }}">Showcase {{ name }}</a>
+                  {% endfor %}
+        </div>
+    </div>
 
+    {% for event in all_event_images %}
+	<div id='{{ event.event_name }}' class="container event" style="min-height: 400px;display: none; background: #e7e7e7; margin-top: 2%">
+        <h3> {{ event.event_name }} </h3>
+        <div id="nanogallery2 {{ event.event_name }}" data-nanogallery2 = '{
+                        "thumbnailHeight":  150,
+                        "thumbnailWidth":   "auto",
+						"thumbnailDisplayTransition": "slideLeft",
+                        "itemsBaseURL":     "{% static event.base_dir %}/"
+                      }' >
+
+                  <!-- gallery content -->
+                  {% for name in event.images %}
+                  <a href = "{{ name }}">{{ event.event_name }} {{ name }}</a>
+                  {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+<script>
+function expandEvent(evt, eventName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("event");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" btn-primary", "");
+  }
+
+  var reqdiv = document.getElementById(eventName);
+  reqdiv.style.display = "block";
+  evt.currentTarget.className += " btn-primary";
+}
+</script>
 
 {% endblock body %}

@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime, timedelta
 from .models import People, Event, Gallery, Announcement, LiveMatch, Comment
+import os
 # Create your views here.
 
 """DECLARE LINK TO STATIC DISPLAY IMAGES HERE"""
+STATIC_DIR = 'static'
+SHOWCASE_DIR = 'showcase'
 """ END"""
 
 Secretary = 'secy'
@@ -49,13 +52,27 @@ def events(request):
 
 def gallery(request):
     all_event_images = []
+    showcase_images = []
+    for root, dirs, files in os.walk(os.path.join(STATIC_DIR, SHOWCASE_DIR)):
+        for filename in files:
+            showcase_images.append(filename)
+    showcase = {
+        "base_dir": SHOWCASE_DIR,
+        "images": showcase_images
+    }
     for item in Gallery.objects.all():
+        images = []
+        for root, dirs, files in os.walk(os.path.join(STATIC_DIR, item.path_to_images)):
+            for filename in files:
+                images.append(filename)
         event = {
             "event_name": item.event.name,
-            "path_to_images": item.path_to_images
+            "base_dir": item.path_to_images,
+            "images": images
         }
         all_event_images.append(event)
-    return render(request, 'MainSite/gallery.htmL', {'all_event_images': all_event_images})
+    return render(request, 'MainSite/gallery.htmL', {'all_event_images': all_event_images, 'showcase': showcase,
+                                                     "static_dir": STATIC_DIR})
 
 
 def live(request):

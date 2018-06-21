@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
+STATIC_DIR = 'static'
 TEAMS = (
     ('', 'None'),
     ('Athletics (Men)', 'Athletics (Men)'),
