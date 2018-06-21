@@ -19,7 +19,7 @@
     new WOW().init();
     </script>
 
-<div id="jssor_1" style="position:relative;margin-left: 3%;margin-top: 7%; width:980px;height:380px;overflow:hidden;visibility:hidden; z-index: 1">
+<div id="jssor_1" style="position:relative;margin-left: 3%;margin-top: 1%; width:980px;height:380px;overflow:hidden;visibility:hidden; z-index: 1">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
@@ -71,9 +71,7 @@
 
                     <a href="http://www.jssor.com">
                         a link
-                    </a> or an image
-
-                    <img src="{% static 'MainSite/img_slideshow/icon_chrome.png' %}" /> here.
+                    </a> or an image here.
                 </div>
             </div>
         </div>
@@ -108,10 +106,8 @@
 </p>
 </div>
 
-    <section>
-      <div class="container">
-        <div id="ios-notice" class="alert alert-info hidden"><p><strong>Notice:</strong> Hello mobile user. Unfortunately, this parallax effect is not reliably achieved on mobile devices, so all you will see on this demo page are static backgrounds.  Please visit this page on a desktop browser to see its full effect.</p></div>
-      </div>
+    <section style="margin-top: 2%">
+        <div id="ios-notice" class="alert alert-info" style="display: none"><p><strong>Notice:</strong> Hello mobile user. Unfortunately, this parallax effect is not reliably achieved on mobile devices, so all you will see on this demo page are static backgrounds.  Please visit this page on a desktop browser to see its full effect.</p></div>
     </section>
 
 <div style="position: relative; padding: 3%">
@@ -148,7 +144,7 @@ Hello World
     <script type="text/javascript">
     $(function(){
         if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-          $('#ios-notice').removeClass('hidden');
+          $('#ios-notice').style.display = "block";
           $('.parallax-container').height( $(window).height() * 0.5 | 0 );
         } else {
           $(window).resize(function(){
