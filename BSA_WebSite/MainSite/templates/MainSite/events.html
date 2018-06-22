@@ -18,8 +18,8 @@
     <div class="container">
     {% for event in day_events %}
 
-<div id="contactsb">
 <center>
+<div id="contactsb" style="display: inline-block;">
 <img src="{{ event.image_link }}" alt="Image for event" id="contactbg" />
 
 <img src="{{ event.logo_link }}" alt="Logo for event" id="contactpropic" />
@@ -30,8 +30,8 @@
 <div class="sbshbor">
 {{ event.time }}    {{ event.date }}
 </div>
-</center>
 </div>
+</center>
 
     {% endfor %}
     </div>
